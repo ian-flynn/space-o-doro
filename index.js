@@ -1,7 +1,6 @@
 function App() {
-    return (
-        <div>Hello</div>
-    )
+  return (
+      <div>Hello</div>
+  )
 }
-
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById('root'));
