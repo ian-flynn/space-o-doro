@@ -90,6 +90,8 @@ const App = () => {
     };
 
     const resetTime = () => {
+        audioElement.current.pause();
+        audioElement.current.currentTime = 0;
         clearInterval(intervalId);
         setIntervalId(null);
         setDisplayTime(25*60);

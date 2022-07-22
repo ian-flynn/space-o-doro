@@ -6,19 +6,20 @@ function App(){
     const [timerOn, setTimerOn] = React.useState(false);
     const [onBreak, setOnBreak] = React.useState(false);
     const [intervalId, setIntervalId] = React.useState(null);
-    
+    const breakAudio = React.useRef(null);
+
     React.useEffect(() => {
         setDisplayTime(sessionTime);
       }, [sessionTime]);
 
     React.useEffect(()=>{
         if (displayTime == 0){
-            breakAudio.currentTime = 1;
-            breakAudio.play();
-            setTimeout(()=>{
-                breakAudio.pause();
-                breakAudio.currentTime = 0;
-                }, 1300);
+            breakAudio.current.currentTime = 0;
+            breakAudio.current.play();
+            // setTimeout(()=>{
+            //     breakAudio.current.pause();
+            //     breakAudio.current.currentTime = 0;
+            //     }, 1300);
             if(!onBreak){
                 setOnBreak(true);
                 setDisplayTime(breakTime);
@@ -89,6 +90,8 @@ function App(){
     };
 
     const resetTime = () => {
+        breakAudio.current.pause();
+        breakAudio.current.currentTime = 0;
         clearInterval(intervalId);
         setIntervalId(null);
         setDisplayTime(25*60);
@@ -122,9 +125,10 @@ function App(){
             <button id='start_stop' onClick={timerControl}>{timerOn ? ('Pause'):('Start')}</button>
             <button id='reset' onClick={resetTime}>Reset</button>
             <audio
-            src="./alarmSound.mp3"
-            id="beep"
-            ref={breakAudio}></audio>
+        src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
+        id="beep"
+        ref={breakAudio}
+      ></audio>
         </div>
     )   
 }
