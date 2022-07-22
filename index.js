@@ -16,15 +16,10 @@ function App(){
         if (displayTime == 0){
             breakAudio.current.currentTime = 0;
             breakAudio.current.play();
-            // setTimeout(()=>{
-            //     breakAudio.current.pause();
-            //     breakAudio.current.currentTime = 0;
-            //     }, 1300);
+            setOnBreak(!onBreak);
             if(!onBreak){
-                setOnBreak(true);
                 setDisplayTime(breakTime);
             } else if(onBreak){
-                setOnBreak(false);
                 setDisplayTime(sessionTime);
             }
         }
