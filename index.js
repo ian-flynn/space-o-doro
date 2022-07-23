@@ -101,19 +101,20 @@ function App(){
             <h1>Pomodoro Clock</h1>
             {/* <button onClick={playBreakSound}>Play</button> */}
 
-            <div>
+            <div id='break-box' className="stripe">
                 <h3 id='break-label'>Break Length</h3>
                     <button onClick={() => changeTime(-60, 'break')} id='break-decrement'><i class="fa-solid fa-arrow-down"></i></button>
                 <h3 id='break-length'>{breakTime/60}</h3>
                 <button onClick={() => changeTime(60, 'break')} id='break-increment'><i class="fa-solid fa-arrow-up"></i></button>
             </div>
 
-            <div>
+            <div id='session-box' className="stripe">
                 <h3 id='session-label'>Session Length</h3>
                 <button onClick={() => changeTime(-60, 'session')} id='session-decrement'><i class="fa-solid fa-arrow-down"></i></button>
                 <h3 id='session-length'>{sessionTime/60}</h3>
                 <button onClick={() => changeTime(60, 'session')} id='session-increment'><i class="fa-solid fa-arrow-up"></i></button>
             </div>
+
             <div id='timer-box'>
               <h3 id='timer-label'>{onBreak ? 'Break' : 'Session'}</h3>
               <h1 id='time-left'>{formatTime(displayTime)}</h1>
