@@ -3,6 +3,24 @@
     font-family: 'Quicksand', sans-serif;
     box-sizing: border-box;
 }
+body{
+    background: orange;
+}
+/* Button Styles */
+button{
+	background: none;
+	border: none;
+	padding: 0;
+    color: inherit;
+	font-size: large;
+	cursor: pointer;
+	outline: inherit;
+}
+.orb > button {
+    color: white;
+}
+
+
 .timer {
     text-align: center;
     padding-top: 50px;
@@ -26,15 +44,19 @@
     position: relative;
     top: -30px;
     border-radius: 50%;
+
 }
 .right{
     float: right;
     background-color: orangered;
 }
+
 /* Break Box */
 #break-box{
     background-image: linear-gradient(to left, rgba(255,0,0,0), cyan);
     text-align: left;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
     width: 100%;
     max-width: 1200px;
     height: 100px;
@@ -47,6 +69,8 @@
 #session-box{
     background-image: linear-gradient(to right, rgba(255,0,0,0), aquamarine);
     text-align: right;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
     width: 100%;
     max-width: 1200px;
     height: 100px;

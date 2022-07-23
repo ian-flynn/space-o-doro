@@ -105,7 +105,7 @@ function App(){
                     <div className="orb left">
                         <h3 id='break-label'>Break Length</h3>
                         <button onClick={() => changeTime(-60, 'break')} id='break-decrement'><i className="fa-solid fa-arrow-down"></i></button>
-                        <h3 id='break-length'>{breakTime/60}</h3>
+                        <span id='break-length'>{breakTime/60}</span>
                         <button onClick={() => changeTime(60, 'break')} id='break-increment'><i className="fa-solid fa-arrow-up"></i></button>
                     </div>
                 </div>
@@ -113,7 +113,7 @@ function App(){
                     <div className="orb right">
                         <h3 id='session-label'>Session Length</h3>
                         <button onClick={() => changeTime(-60, 'session')} id='session-decrement'><i className="fa-solid fa-arrow-down"></i></button>
-                        <h3 id='session-length'>{sessionTime/60}</h3>
+                        <span id='session-length'>{sessionTime/60}</span>
                         <button onClick={() => changeTime(60, 'session')} id='session-increment'><i className="fa-solid fa-arrow-up"></i></button>
                     </div>
                 </div>
