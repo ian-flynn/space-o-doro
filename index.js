@@ -103,23 +103,23 @@ function App(){
 
             <div>
                 <h3 id='break-label'>Break Length</h3>
-                    <button onClick={() => changeTime(-60, 'break')} id='break-decrement'>Down</button>
+                    <button onClick={() => changeTime(-60, 'break')} id='break-decrement'><i class="fa-solid fa-arrow-down"></i></button>
                 <h3 id='break-length'>{breakTime/60}</h3>
-                <button onClick={() => changeTime(60, 'break')} id='break-increment'>Up</button>
+                <button onClick={() => changeTime(60, 'break')} id='break-increment'><i class="fa-solid fa-arrow-up"></i></button>
             </div>
 
             <div>
                 <h3 id='session-label'>Session Length</h3>
-                <button onClick={() => changeTime(-60, 'session')} id='session-decrement'>Down</button>
+                <button onClick={() => changeTime(-60, 'session')} id='session-decrement'><i class="fa-solid fa-arrow-down"></i></button>
                 <h3 id='session-length'>{sessionTime/60}</h3>
-                <button onClick={() => changeTime(60, 'session')} id='session-increment'>Up</button>
+                <button onClick={() => changeTime(60, 'session')} id='session-increment'><i class="fa-solid fa-arrow-up"></i></button>
             </div>
             <div id='timer-box'>
               <h3 id='timer-label'>{onBreak ? 'Break' : 'Session'}</h3>
               <h1 id='time-left'>{formatTime(displayTime)}</h1>
               <div id="button-box">
-                <button id='start_stop' onClick={timerControl}>{timerOn ? 'Pause':'Start'}</button>
-                <button id='reset' onClick={resetTime}>Reset</button>
+                <button id='start_stop' onClick={timerControl}>{timerOn ? <i class="fa-solid fa-pause"></i>:<i class="fa-solid fa-play"></i>}</button>
+                <button id='reset' onClick={resetTime}><i class="fa-solid fa-arrows-rotate"></i></button>
               </div>
               <audio
                 src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
