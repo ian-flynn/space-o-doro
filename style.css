@@ -1,69 +1,45 @@
 * {
     margin: 0;
     font-family: 'Quicksand', sans-serif;
+    box-sizing: border-box;
 }
 .timer {
     text-align: center;
+}
+.background {
     background-color: orange;
     width: 100vw;
     height: 100vh;
-
+    z-index: -99;
+}
+.contents{
+    margin-top: 60px;
+    /* remove below this */
+    background-color: red;
+    padding: 5px;
 }
 
-/* Buttons */
-button {
-    display: inline-block;
-}
-/* button {
-    display: inline-block;
-    border: none;
-    padding: 1rem 2rem;
-    margin: 0;
-    text-decoration: none;
-    background: #0069ed;
-    color: #ffffff;
-    font-family: sans-serif;
-    font-size: 1rem;
-    cursor: pointer;
-    text-align: center;
-    transition: background 250ms ease-in-out, 
-                transform 150ms ease;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
-
-button:hover,
-button:focus {
-    background: #0053ba;
-}
-
-button:focus {
-    outline: 1px solid #fff;
-    outline-offset: -4px;
-}
-
-button:active {
-    transform: scale(0.99);
-} */
-
-.stripe {
-
-}
 /* Break Box */
 #break-box{
-    background-color: aqua;
-    position: absolute;
+    /* background-image: linear-gradient(to left, rgba(255,0,0,0), cyan); */
+    background-color: cyan;
+    text-align: left;
+    width: 100%;
+    padding-left: 100px;
 }
 
 /* Session Box */
 #session-box{
-    background-color:aquamarine;
-    position: absolute;
+    /* background-image: linear-gradient(to right, rgba(255,0,0,0), aquamarine); */
+    background-color: aquamarine;
+    text-align: right;
+    width: 100%;
+    padding-right: 100px;
 }
 
 /* Tomato Block */
 #timer-box{
-    margin: 100px auto;
+    margin: auto;
     background-color: brown;
     width: 400px;
     height: 400px;
@@ -72,7 +48,7 @@ button:active {
     border-radius: 50%;
     padding: 20px;
     box-sizing: border-box;
-    gap: 10px
+    gap: 10px;
 }
 #timer-label {
     font-size: 40px;
@@ -80,8 +56,6 @@ button:active {
 #time-left {
     font-size: 80px;
     background-color: red;
-
-    
 }
 #start_stop, #reset{
     width: 30%;
