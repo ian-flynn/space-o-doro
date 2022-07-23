@@ -117,8 +117,10 @@ function App(){
             <div id='timer-box'>
               <h3 id='timer-label'>{onBreak ? 'Break' : 'Session'}</h3>
               <h1 id='time-left'>{formatTime(displayTime)}</h1>
-              <button id='start_stop' onClick={timerControl}>{timerOn ? 'Pause':'Start'}</button>
-              <button id='reset' onClick={resetTime}>Reset</button>
+              <div id="button-box">
+                <button id='start_stop' onClick={timerControl}>{timerOn ? 'Pause':'Start'}</button>
+                <button id='reset' onClick={resetTime}>Reset</button>
+              </div>
               <audio
                 src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
                 id="beep"
