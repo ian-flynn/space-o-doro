@@ -19,8 +19,6 @@ button{
 .orb > button {
     color: white;
 }
-
-
 .timer {
     text-align: center;
     padding-top: 50px;
@@ -44,13 +42,13 @@ button{
     position: relative;
     top: -30px;
     border-radius: 50%;
-
+    z-index:99;
+    box-shadow: inset -25px -25px 40px rgba(0,0,0,.5);
 }
 .right{
     float: right;
     background-color: orangered;
 }
-
 /* Break Box */
 #break-box{
     background-image: linear-gradient(to left, rgba(255,0,0,0), cyan);
@@ -93,6 +91,8 @@ button{
     padding: 20px;
     box-sizing: border-box;
     gap: 10px;
+    box-shadow: inset -25px -25px 40px rgba(0,0,0,.5);
+    
     
 }
 #timer-label {
