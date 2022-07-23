@@ -5,6 +5,10 @@
 }
 .timer {
     text-align: center;
+    padding-top: 50px;
+    max-width: 1200px;
+    margin: auto;
+
 }
 .background {
     background-color: orange;
@@ -13,35 +17,44 @@
     z-index: -99;
 }
 .contents{
-    margin-top: 60px;
-    /* remove below this */
-    background-color: red;
-    padding: 5px;
+    padding-top: 100px;
 }
-
+.orb{
+    background-color: red;
+    width: 160px;
+    height: 160px;
+    position: relative;
+    top: -30px;
+    border-radius: 50%;
+}
+.right{
+    float: right;
+    background-color: orangered;
+}
 /* Break Box */
 #break-box{
-    /* background-image: linear-gradient(to left, rgba(255,0,0,0), cyan); */
-    background-color: cyan;
+    background-image: linear-gradient(to left, rgba(255,0,0,0), cyan);
     text-align: left;
     width: 100%;
+    max-width: 1200px;
+    height: 100px;
     padding-left: 100px;
     position: absolute;
     z-index: 1;
+    top: 290px;
 }
-
 /* Session Box */
 #session-box{
-    /* background-image: linear-gradient(to right, rgba(255,0,0,0), aquamarine); */
-    background-color: aquamarine;
+    background-image: linear-gradient(to right, rgba(255,0,0,0), aquamarine);
     text-align: right;
     width: 100%;
+    max-width: 1200px;
+    height: 100px;
     padding-right: 100px;
     position: absolute;
     z-index: 1;
-
+    top: 410px;
 }
-
 /* Tomato Block */
 #timer-box{
     position: relative;
@@ -63,7 +76,6 @@
 }
 #time-left {
     font-size: 80px;
-    background-color: red;
 }
 #start_stop, #reset{
     width: 30%;
