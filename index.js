@@ -114,16 +114,17 @@ function App(){
                 <h3 id='session-length'>{sessionTime/60}</h3>
                 <button onClick={() => changeTime(60, 'session')} id='session-increment'>Up</button>
             </div>
-            
-            <h3 id='timer-label'>{onBreak ? 'Break' : 'Session'}</h3>
-            <h1 id='time-left'>{formatTime(displayTime)}</h1>
-            <button id='start_stop' onClick={timerControl}>{timerOn ? ('Pause'):('Start')}</button>
-            <button id='reset' onClick={resetTime}>Reset</button>
-            <audio
-        src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
-        id="beep"
-        ref={breakAudio}
-      ></audio>
+            <div id='timer-box'>
+              <h3 id='timer-label'>{onBreak ? 'Break' : 'Session'}</h3>
+              <h1 id='time-left'>{formatTime(displayTime)}</h1>
+              <button id='start_stop' onClick={timerControl}>{timerOn ? 'Pause':'Start'}</button>
+              <button id='reset' onClick={resetTime}>Reset</button>
+              <audio
+                src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
+                id="beep"
+                ref={breakAudio}>
+              </audio>
+            </div>
         </div>
     )   
 }

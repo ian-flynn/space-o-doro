@@ -1,3 +1,30 @@
+* {
+    margin: 0;
+}
 .timer {
     text-align: center;
+    background-color: orange;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Tomato Block */
+
+#timer-box{
+    margin: auto;
+    background-color: brown;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 50%;
+}
+#timer-label {
+    font-size: 40px;
+}
+#time-left {
+    font-size: 80px;
+}
+#start_stop, #reset{
+    width: 30%;
 }
