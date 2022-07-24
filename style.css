@@ -27,16 +27,16 @@ button{
 }
 .timer {
     text-align: center;
-    padding-top: 50px;
+    padding-top: 150px;
     max-width: 1200px;
     margin: auto;
+  
 
 }
-.background {
-
-}
-.contents{
-    padding-top: 100px;
+.title {
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 .orb{
     background-color: red;
@@ -55,8 +55,7 @@ button{
 /* Break Box */
 #break-box{
     background-image: linear-gradient(to right, orange, 20%, rgba(255, 255, 255,0)), 
-                linear-gradient(to right, cyan, rgba(255, 255, 255, 0));
-    text-align: left;
+        linear-gradient(to right, cyan, rgba(255, 255, 255, 0));
     border-top-left-radius: 50%;
     border-bottom-left-radius: 50%;
     width: 100%;
@@ -67,15 +66,10 @@ button{
     z-index: 1;
     top: 290px;
 }
-.stripe {
-     /* box-shadow: inset 25px -25px 60px rgba(0,0,0,.5), */
-}
-
 /* Session Box */
 #session-box{
     background-image: linear-gradient(to left, orange, 10%, rgba(255, 255, 255, 0)),
         linear-gradient(to left, aquamarine, rgba(255,0,0,0));
-    text-align: right;
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
     width: 100%;
