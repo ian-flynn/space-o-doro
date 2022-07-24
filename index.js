@@ -131,7 +131,7 @@ function App(){
                     </audio>
                 </div>
             </div> 
-            
+            <span class="four-point-star"></span>
         </div>
     )   
 }
