@@ -135,12 +135,18 @@ button{
     z-index:999;
     box-shadow: inset -25px -25px 40px rgba(0,0,0,.5);
 }
+.orb-contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
 .right{
     float: right;
     background-color: orangered;
 }
 
-/* .four-point-star::after,
+.four-point-star::after,
 .four-point-star::before {
     position: absolute;
     top: 0;
@@ -149,7 +155,7 @@ button{
     font-size: 6rem;
 }
 
-.four-point-star::after 
+.four-point-star::after {
     background: linear-gradient(135deg, rgba(255,191,183,1) 20%, rgba(243,44,117,1) 70%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -161,4 +167,4 @@ button{
 }
 .four-point-star {
     position: relative;
-} */
+}
