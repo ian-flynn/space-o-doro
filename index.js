@@ -100,20 +100,26 @@ function App(){
         <div className="timer">
             <h1 className="title">Pomodoro Clock</h1>
             <div className="contents">
-                <div id='break-box'>
-                    <div className="orb left">
-                        <h3 id='break-label'>Break Length</h3>
-                        <button onClick={() => changeTime(-60, 'break')} id='break-decrement'><i className="fa-solid fa-arrow-down"></i></button>
-                        <span id='break-length'>{breakTime/60}</span>
-                        <button onClick={() => changeTime(60, 'break')} id='break-increment'><i className="fa-solid fa-arrow-up"></i></button>
+                <div className="boxes">
+                    <div id='break-box'>
+                        <figure className="top-stripe">
+                            <div className="orb left">
+                                <h3 id='break-label'>Break Length</h3>
+                                <button onClick={() => changeTime(-60, 'break')} id='break-decrement'><i className="fa-solid fa-arrow-down"></i></button>
+                                <span id='break-length'>{breakTime/60}</span>
+                                <button onClick={() => changeTime(60, 'break')} id='break-increment'><i className="fa-solid fa-arrow-up"></i></button>
+                            </div>
+                        </figure>
                     </div>
-                </div>
-                <div id='session-box'>
-                    <div className="orb right">
-                        <h3 id='session-label'>Session Length</h3>
-                        <button onClick={() => changeTime(-60, 'session')} id='session-decrement'><i className="fa-solid fa-arrow-down"></i></button>
-                        <span id='session-length'>{sessionTime/60}</span>
-                        <button onClick={() => changeTime(60, 'session')} id='session-increment'><i className="fa-solid fa-arrow-up"></i></button>
+                    <div id='session-box'>
+                        <figure className="bottom-stripe">
+                            <div className="orb right">
+                                <h3 id='session-label'>Session Length</h3>
+                                <button onClick={() => changeTime(-60, 'session')} id='session-decrement'><i className="fa-solid fa-arrow-down"></i></button>
+                                <span id='session-length'>{sessionTime/60}</span>
+                                <button onClick={() => changeTime(60, 'session')} id='session-increment'><i className="fa-solid fa-arrow-up"></i></button>
+                            </div> 
+                        </figure>
                     </div>
                 </div>
                 <div className="timer-ball timer-ball-stuff">
