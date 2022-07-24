@@ -117,11 +117,11 @@ function App(){
                         <button onClick={() => changeTime(60, 'session')} id='session-increment'><i className="fa-solid fa-arrow-up"></i></button>
                     </div>
                 </div>
-                <div id='timer-box'>
+                <div className="timer-ball timer-ball-stuff">
                     <h3 id='timer-label'>{onBreak ? 'Break' : 'Session'}</h3>
                     <h1 id='time-left'>{formatTime(displayTime)}</h1>
                     <div id="button-box">
-                        <button id='start_stop' onClick={timerControl}>{timerOn ? <i className="fa-solid fa-pause"></i>:<i className="fa-solid fa-play"></i>}</button>
+                        <button id='start_stop' onClick={timerControl}>{timerOn ? <i className="fa-solid fa-pause fa-lg"></i>:<i className="fa-solid fa-play"></i>}</button>
                         <button id='reset' onClick={resetTime}><i className="fa-solid fa-arrows-rotate"></i></button>
                     </div>
                     <audio

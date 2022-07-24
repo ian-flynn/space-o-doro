@@ -78,23 +78,29 @@ button{
     top: 410px;
 }
 /* Tomato Block */
-#timer-box{
+.timer-ball{
     position: relative;
     z-index: 99;
     margin: auto;
     background-color: brown;
     width: 400px;
     height: 400px;
-    display: flex;
-    flex-direction: column;
     border-radius: 50%;
     padding: 20px;
     box-sizing: border-box;
-    gap: 10px;
     box-shadow: inset -25px -25px 40px rgba(0,0,0,.5);
-    
-    
 }
+.timer-ball-stuff{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+
+}
+.timer-ball-stuff > i {
+    font-size: 40px;
+}
+
 #timer-label {
     font-size: 40px;
 }
