@@ -98,7 +98,7 @@ function App(){
 
     return(
         <div className="timer">
-            <h1 className="title">Pomodoro Clock</h1>
+            <h1 className="title">Pomodoro Timer</h1>
             <div className="contents">
                 <div className="boxes">
                     <div id='break-box'>
