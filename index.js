@@ -106,9 +106,9 @@ function App(){
                             <div className="orb orb-contents">
                                 <h3 id='break-label'>Break<br/>Length</h3>
                                 <div>
-                                    <button onClick={() => changeTime(-60, 'break')} id='break-decrement'><i className="fa-solid fa-arrow-down"></i></button>
-                                    <span id='break-length'>{breakTime/60}</span>
-                                    <button onClick={() => changeTime(60, 'break')} id='break-increment'><i className="fa-solid fa-arrow-up"></i></button>
+                                    <button onClick={() => changeTime(-60, 'break')} id='break-decrement'><i className="fa-solid fa-arrow-down fa-xl"></i></button>
+                                    <span id='break-length'> {breakTime/60} </span>
+                                    <button onClick={() => changeTime(60, 'break')} id='break-increment'><i className="fa-solid fa-arrow-up fa-xl"></i></button>
                                 </div>
                             </div>
                         </figure>
@@ -118,21 +118,22 @@ function App(){
                             <div className="orb right orb-contents">
                                 <h3 id='session-label'>Session<br/>Length</h3>
                                 <div>
-                                    <button onClick={() => changeTime(-60, 'session')} id='session-decrement'><i className="fa-solid fa-arrow-down"></i></button>
-                                    <span id='session-length'>{sessionTime/60}</span>
-                                    <button onClick={() => changeTime(60, 'session')} id='session-increment'><i className="fa-solid fa-arrow-up"></i></button>
+                                    <button onClick={() => changeTime(-60, 'session')} id='session-decrement'><i className="fa-solid fa-arrow-down fa-xl"></i></button>
+                                    <span id='session-length'> {sessionTime/60} </span>
+                                    <button onClick={() => changeTime(60, 'session')} id='session-increment'><i className="fa-solid fa-arrow-up fa-xl"></i></button>
                                 </div>
                             </div> 
                         </figure>
                     </div>
                 </div>
                 <div className="timer-ball timer-ball-stuff">
-                    <h3 id='timer-label'>{onBreak ? 'Break' : 'Session'}</h3>
-                    <h1 id='time-left'>{formatTime(displayTime)}</h1>
                     <div id="button-box">
-                        <button id='start_stop' onClick={timerControl}>{timerOn ? <i className="fa-solid fa-pause fa-lg"></i>:<i className="fa-solid fa-play"></i>}</button>
-                        <button id='reset' onClick={resetTime}><i className="fa-solid fa-arrows-rotate"></i></button>
+                        <h3 id='timer-label'>{onBreak ? 'Break' : 'Session'}</h3>
+                        <button id='start_stop' onClick={timerControl}>{timerOn ? <i className="fa-solid fa-pause fa-xl"></i>:<i className="fa-solid fa-play fa-xl"></i>}</button>
+                        <button id='reset' onClick={resetTime}><i className="fa-solid fa-arrows-rotate fa-xl"></i></button>
                     </div>
+                    <h1 id='time-left'>{formatTime(displayTime)}</h1>
+                    
                     <audio
                         src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
                         id="beep"

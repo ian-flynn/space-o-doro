@@ -59,12 +59,15 @@ button{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 10px;
+    gap: 35px;
+}
+#button-box {
+    margin-top: 15px;
+}
+#button-box h3 {
+    margin-bottom: 10px;
+}
 
-}
-.timer-ball-stuff > i {
-    font-size: 40px;
-}
 
 #timer-label {
     font-size: 40px;
@@ -139,11 +142,17 @@ button{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 15px;
+    gap: 1px;
 }
 .right{
     float: right;
     background-color: orangered;
+}
+#session-length {
+    font-size: 30px;
+}
+#break-length {
+    font-size: 30px;
 }
 
 .four-point-star::after,
