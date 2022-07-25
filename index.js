@@ -141,7 +141,10 @@ function App(){
                     </audio>
                 </div>
             </div> 
-            <span class="four-point-star"></span>
+            <span class="four-point-star star0"></span>
+            <span class="four-point-star star1"></span>
+            <span class="four-point-star star2"></span>
+            <span class="four-point-star star3"></span>
         </div>
     )   
 }

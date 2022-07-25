@@ -78,18 +78,8 @@ button{
 #start_stop, #reset{
     width: 30%;
 }
-.timer-ball::before,
-.timer-ball::after{
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: "\2726";
-    font-size: 6rem;
-}
-/* .timer-ball::before {  The star shadow 
-    color: transparent;
-    text-shadow: 2px 3px 10px black;
-} */
+
+
 
 /* Moons Section */
 .boxes {
@@ -136,7 +126,7 @@ button{
     top: -30px;
     border-radius: 50%;
     z-index:999;
-    box-shadow: inset -25px -25px 40px rgba(0,0,0,.5);
+    box-shadow: inset -25px -25px 40px rgba(0,0,0,.5), 3px 3px 10px rgba(0, 0, 0, 0.2);
 }
 .orb-contents {
     display: flex;
@@ -163,17 +153,60 @@ button{
     content: "\2726";
     font-size: 6rem;
 }
-
-.four-point-star::after {
+/* Repetitive star styling */
+.star0 {
+    position: relative;
+    left: 200px;
+    top: 50px
+}
+.star0::before{
+    color: transparent;
+    text-shadow: 2px 3px 10px rgb(212, 43, 141);
+}
+.star0::after {
     background: linear-gradient(135deg, rgba(255,191,183,1) 20%, rgba(243,44,117,1) 70%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
-.four-point-star::before{
-    color: transparent;
-    text-shadow: 2px 3px 10px rgba(242, 96, 85, 1);
-}
-.four-point-star {
+.star1 {
     position: relative;
+    left: 100px;
+    top: 600px;
+}
+.star1::before{
+    color: transparent;
+    text-shadow: 2px 3px 10px rgb(41, 187, 31);
+}
+.star1::after {
+    background: linear-gradient(135deg, rgb(217, 243, 188) 20%, rgb(14, 180, 70) 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.star2{
+    position: relative;
+    top: 410px;
+    right: 330px
+}
+.star2::before{
+    color: transparent;
+    text-shadow: 2px 3px 10px rgb(55, 125, 230);
+}
+.star2::after {
+    background: linear-gradient(135deg, rgb(183, 250, 255) 20%, rgb(3, 137, 130) 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.star3{
+    position: relative;
+    right: 200px;
+    top: 120px;
+}
+.star3::before{
+    color: transparent;
+    text-shadow: 2px 3px 10px rgb(155, 126, 42);
+}
+.star3::after {
+    background: linear-gradient(135deg, rgb(249, 228, 144) 20%, rgb(177, 142, 4) 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
