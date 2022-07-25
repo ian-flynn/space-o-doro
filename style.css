@@ -59,10 +59,10 @@ button{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 35px;
+    gap: 38px;
 }
 #button-box {
-    margin-top: 15px;
+    margin-top: 25px;
 }
 #button-box h3 {
     margin-bottom: 10px;
