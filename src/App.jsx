@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Star from './components/Star.jsx';
-import BreakComet from './components/BreakComet.jsx';
+import Comet from './components/Comet.jsx';
 
 const App = () => {
   const [displayTime, setDisplayTime] = useState(25 * 60);
@@ -105,33 +105,13 @@ const App = () => {
     <div className='timer'>
       <div className='contents'>
         <div className='boxes'>
-          <BreakComet breakTime={breakTime} changeTime={changeTime} />
-          <div id='session-box'>
-            <figure className='bottom-stripe'>
-              <div className='orb right orb-contents'>
-                <h3 id='session-label'>
-                  Session
-                  <br />
-                  Length
-                </h3>
-                <div>
-                  <button
-                    onClick={() => changeTime(-60, 'session')}
-                    id='session-decrement'
-                  >
-                    <i className='fa-solid fa-arrow-down fa-xl'></i>
-                  </button>
-                  <span id='session-length'> {sessionTime / 60} </span>
-                  <button
-                    onClick={() => changeTime(60, 'session')}
-                    id='session-increment'
-                  >
-                    <i className='fa-solid fa-arrow-up fa-xl'></i>
-                  </button>
-                </div>
-              </div>
-            </figure>
-          </div>
+          <Comet type={'break'} time={breakTime} changeTime={changeTime} />
+          <Comet
+            type={'session'}
+            time={sessionTime}
+            changeTime={changeTime}
+            floatDirection={'right'}
+          />
         </div>
         <div className='timer-ball timer-ball-stuff'>
           <div id='button-box'>
