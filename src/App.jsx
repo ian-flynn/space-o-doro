@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Star from './components/Star.jsx';
+
 import Comet from './components/Comet.jsx';
+import Planet from './components/Planet.jsx';
 
 const App = () => {
   const [displayTime, setDisplayTime] = useState(25 * 60);
@@ -102,44 +103,25 @@ const App = () => {
   };
 
   return (
-    <div className='timer'>
-      <div className='contents'>
-        <div className='boxes'>
-          <Comet type={'break'} time={breakTime} changeTime={changeTime} />
-          <Comet
-            type={'session'}
-            time={sessionTime}
-            changeTime={changeTime}
-            floatDirection={'right'}
-          />
-        </div>
-        <div className='timer-ball timer-ball-stuff'>
-          <div id='button-box'>
-            <h3 id='timer-label'>{onBreak ? 'Break' : 'Session'}</h3>
-            <button id='start_stop' onClick={timerControl}>
-              {timerOn ? (
-                <i className='fa-solid fa-pause fa-xl'></i>
-              ) : (
-                <i className='fa-solid fa-play fa-xl'></i>
-              )}
-            </button>
-            <button id='reset' onClick={resetTime}>
-              <i className='fa-solid fa-arrows-rotate fa-xl'></i>
-            </button>
-          </div>
-          <h1 id='time-left'>{formatTime(displayTime)}</h1>
-
-          <audio
-            src='https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav'
-            id='beep'
-            ref={breakAudio}
-          ></audio>
-        </div>
+    <div className='contents'>
+      <Planet
+        onBreak={onBreak}
+        timerControl={timerControl}
+        timerOn={timerOn}
+        resetTime={resetTime}
+        formatTime={formatTime}
+        displayTime={displayTime}
+        breakAudio={breakAudio}
+      />
+      <div id='comets-box'>
+        <Comet type={'break'} time={breakTime} changeTime={changeTime} />
+        <Comet
+          type={'session'}
+          time={sessionTime}
+          changeTime={changeTime}
+          floatDirection={'right'}
+        />
       </div>
-      <Star positionClass={'star0'} />
-      <Star positionClass={'star1'} />
-      <Star positionClass={'star2'} />
-      <Star positionClass={'star3'} />
     </div>
   );
 };
