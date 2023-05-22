@@ -12,6 +12,7 @@ body {
     color-mix(in srgb, var(--background-color) 50%, rgb(15, 15, 205))
   );
   background-repeat: no-repeat;
+  padding: 0 1rem;
 }
 /* Button Styles */
 button {
@@ -27,7 +28,7 @@ button {
   width: 100vw;
   height: 100vh;
   max-width: 1200px;
-  min-width: 1000px;
+  min-width: 900px;
   margin: auto;
   padding: 1rem;
   display: flex;
@@ -48,14 +49,15 @@ button {
   justify-content: space-between;
   align-items: center;
   z-index: 99;
-  padding: 100px 0px 70px;
+  padding: 70px 0px 60px;
   & h1 {
     font-size: 3rem;
   }
   #button-box {
-    background-color: red;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
   }
-
   & p {
     font-size: 4rem;
   }
@@ -69,7 +71,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: 5rem;
+  /* padding-top: 5rem; */
 }
 
 /* Moons Section */
@@ -79,8 +81,13 @@ button {
   width: 100%;
   max-width: 1200px;
   height: 100px;
+  /* overflow: hidden; */
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
 }
 .break-stripe {
+  justify-content: flex-start;
   background-image: linear-gradient(
       to right,
       orange,
@@ -103,15 +110,16 @@ button {
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
   padding-right: 100px;
+  justify-content: end;
 }
 .orb {
   background-color: red;
   width: 160px;
   height: 160px;
-  position: relative;
-  top: -30px;
+  /* position: relative; */
+  /* top: -30px; */
   border-radius: 50%;
-  z-index: 999;
+  /* z-index: 999; */
   box-shadow: inset -25px -25px 40px rgba(0, 0, 0, 0.5),
     3px 3px 10px rgba(0, 0, 0, 0.2);
 }
