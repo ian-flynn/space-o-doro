@@ -2,7 +2,6 @@
 * {
   margin: 0;
   font-family: 'Orbitron', sans-serif;
-
   box-sizing: border-box;
 }
 body {
@@ -28,12 +27,6 @@ button {
 .orb > button {
   color: white;
   /* background-color: red; */
-}
-
-.title {
-  position: absolute;
-  top: 10px;
-  right: 10px;
 }
 .contents {
   position: absolute;

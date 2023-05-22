@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
+import Star from './components/Star.jsx';
+import BreakComet from './components/BreakComet.jsx';
 
 const App = () => {
   const [displayTime, setDisplayTime] = useState(25 * 60);
@@ -101,35 +103,9 @@ const App = () => {
 
   return (
     <div className='timer'>
-      <h1 className='title'>Pomodoro Timer</h1>
       <div className='contents'>
         <div className='boxes'>
-          <div id='break-box'>
-            <figure className='top-stripe'>
-              <div className='orb orb-contents'>
-                <h3 id='break-label'>
-                  Break
-                  <br />
-                  Length
-                </h3>
-                <div>
-                  <button
-                    onClick={() => changeTime(-60, 'break')}
-                    id='break-decrement'
-                  >
-                    <i className='fa-solid fa-arrow-down fa-xl'></i>
-                  </button>
-                  <span id='break-length'> {breakTime / 60} </span>
-                  <button
-                    onClick={() => changeTime(60, 'break')}
-                    id='break-increment'
-                  >
-                    <i className='fa-solid fa-arrow-up fa-xl'></i>
-                  </button>
-                </div>
-              </div>
-            </figure>
-          </div>
+          <BreakComet breakTime={breakTime} changeTime={changeTime} />
           <div id='session-box'>
             <figure className='bottom-stripe'>
               <div className='orb right orb-contents'>
@@ -180,10 +156,10 @@ const App = () => {
           ></audio>
         </div>
       </div>
-      <span class='four-point-star star0'></span>
-      <span class='four-point-star star1'></span>
-      <span class='four-point-star star2'></span>
-      <span class='four-point-star star3'></span>
+      <Star positionClass={'star0'} />
+      <Star positionClass={'star1'} />
+      <Star positionClass={'star2'} />
+      <Star positionClass={'star3'} />
     </div>
   );
 };
