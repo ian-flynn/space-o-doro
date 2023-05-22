@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-
+import Star from './components/Star.jsx';
 import Comet from './components/Comet.jsx';
 import Planet from './components/Planet.jsx';
 
@@ -115,12 +115,13 @@ const App = () => {
       />
       <div id='comets-box'>
         <Comet type={'break'} time={breakTime} changeTime={changeTime} />
-        <Comet
-          type={'session'}
-          time={sessionTime}
-          changeTime={changeTime}
-          floatDirection={'right'}
-        />
+        <Comet type={'session'} time={sessionTime} changeTime={changeTime} />
+      </div>
+      <div id='stars-box'>
+        <Star star={'star0'} />
+        <Star star={'star1'} />
+        <Star star={'star2'} />
+        <Star star={'star3'} />
       </div>
     </div>
   );

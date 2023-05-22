@@ -67,11 +67,9 @@ button {
   /* background-color: pink; */
   width: 100%;
   height: 400px;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* padding-top: 5rem; */
 }
 
 /* Moons Section */
@@ -81,8 +79,6 @@ button {
   width: 100%;
   max-width: 1200px;
   height: 100px;
-  /* overflow: hidden; */
-  /* background-color: red; */
   display: flex;
   align-items: center;
 }
@@ -113,115 +109,111 @@ button {
   justify-content: end;
 }
 .orb {
-  background-color: red;
+  background-color: orangered;
   width: 160px;
   height: 160px;
-  /* position: relative; */
-  /* top: -30px; */
   border-radius: 50%;
-  /* z-index: 999; */
   box-shadow: inset -25px -25px 40px rgba(0, 0, 0, 0.5),
     3px 3px 10px rgba(0, 0, 0, 0.2);
-}
-.orb-contents {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 1px;
+  .time-controls {
+    display: flex;
+    align-items: center;
+    & button {
+      font-size: 2rem;
+    }
+    & span {
+      font-size: 30px;
+      margin: 0 0.5rem;
+    }
+  }
 }
-.right {
-  float: right;
-  background-color: orangered;
-}
-#session-length {
-  font-size: 30px;
-}
-#break-length {
-  font-size: 30px;
-}
-
-.four-point-star::after,
-.four-point-star::before {
+#stars-box {
   position: absolute;
-  top: 0;
-  left: 0;
-  content: '\2726';
-  font-size: 6rem;
 }
-/* Repetitive star styling */
-.star0 {
+.four-point-star {
+  &:after,
+  &:before {
+    position: absolute;
+    content: '\2726';
+    font-size: 6rem;
+  }
   position: relative;
+}
+#star0 {
   left: 200px;
-  top: 50px;
+  top: -300px;
+  &:before {
+    color: transparent;
+    text-shadow: 2px 3px 10px rgb(212, 43, 141);
+  }
+  &:after {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 191, 183, 1) 20%,
+      rgba(243, 44, 117, 1) 70%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
-.star0::before {
-  color: transparent;
-  text-shadow: 2px 3px 10px rgb(212, 43, 141);
+#star1 {
+  left: 130px;
+  top: 140px;
+  &:before {
+    color: transparent;
+    text-shadow: 2px 3px 10px rgb(41, 187, 31);
+  }
+  &:after {
+    background: linear-gradient(
+      135deg,
+      rgb(217, 243, 188) 20%,
+      rgb(14, 180, 70) 70%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
-.star0::after {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 191, 183, 1) 20%,
-    rgba(243, 44, 117, 1) 70%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.star1 {
+#star2 {
   position: relative;
-  left: 100px;
-  top: 600px;
+  top: -20px;
+  left: -330px;
+  &:before {
+    color: transparent;
+    text-shadow: 2px 3px 10px rgb(55, 125, 230);
+  }
+  &:after {
+    background: linear-gradient(
+      135deg,
+      rgb(183, 250, 255) 20%,
+      rgb(3, 137, 130) 70%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
-.star1::before {
-  color: transparent;
-  text-shadow: 2px 3px 10px rgb(41, 187, 31);
-}
-.star1::after {
-  background: linear-gradient(
-    135deg,
-    rgb(217, 243, 188) 20%,
-    rgb(14, 180, 70) 70%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.star2 {
+#star3 {
   position: relative;
-  top: 410px;
-  right: 330px;
-}
-.star2::before {
-  color: transparent;
-  text-shadow: 2px 3px 10px rgb(55, 125, 230);
-}
-.star2::after {
-  background: linear-gradient(
-    135deg,
-    rgb(183, 250, 255) 20%,
-    rgb(3, 137, 130) 70%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.star3 {
-  position: relative;
-  right: 200px;
-  top: 120px;
-}
-.star3::before {
-  color: transparent;
-  text-shadow: 2px 3px 10px rgb(155, 126, 42);
-}
-.star3::after {
-  background: linear-gradient(
-    135deg,
-    rgb(249, 228, 144) 20%,
-    rgb(177, 142, 4) 70%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  top: -260px;
+  left: -230px;
+  &:before {
+    color: transparent;
+    text-shadow: 2px 3px 10px rgb(155, 126, 42);
+  }
+  &:after {
+    background: linear-gradient(
+      135deg,
+      rgb(249, 228, 144) 20%,
+      rgb(177, 142, 4) 70%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }

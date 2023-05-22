@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Star = ({ positionClass }) => {
-  return <span className={'four-point-star ' + positionClass}></span>;
+const Star = ({ star }) => {
+  return <div className={'four-point-star '} id={star}></div>;
 };
 
 export default Star;
