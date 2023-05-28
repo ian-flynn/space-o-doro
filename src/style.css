@@ -1,10 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+:root {
+  --background-color: #e66465;
 
+  /* stars */
+  --color-blue: rgb(3, 137, 130);
+  --color-gold: rgb(177, 142, 4);
+  --color-red: rgba(243, 44, 117, 1);
+  --color-green: rgb(14, 180, 70);
+
+  /* comets */
+  --color-comet: orangered;
+
+  /* shadows */
+  --shadow-ball: inset -25px -25px 40px rgba(0, 0, 0, 0.5),
+    0 3px 10px rgb(0 0 0 / 0.2);
+}
 * {
   margin: 0;
   font-family: 'Orbitron', sans-serif;
   box-sizing: border-box;
-  --background-color: #e66465;
 }
 body {
   background: radial-gradient(
@@ -37,18 +51,17 @@ button {
   justify-content: center;
   align-items: center;
 }
-
-#planet {
-  margin: auto;
-  width: 400px;
-  height: 400px;
+.ball {
   border-radius: 50%;
-  box-shadow: inset -25px -25px 40px rgba(0, 0, 0, 0.5),
-    0 3px 10px rgb(0 0 0 / 0.2);
+  box-shadow: var(--shadow-ball);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
+}
+#planet {
+  width: 400px;
+  height: 400px;
+  justify-content: space-between;
   z-index: 99;
   padding: 70px 0px 60px;
   & h1 {
@@ -65,73 +78,66 @@ button {
 }
 #comets-box {
   position: absolute;
-  /* background-color: pink; */
   width: 100%;
   height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  .break-stripe,
+  .session-stripe {
+    margin: auto;
+    width: 100%;
+    max-width: 1200px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    .orb {
+      background-color: var(--color-comet);
+      width: 160px;
+      height: 160px;
+      justify-content: center;
+      .time-controls {
+        display: flex;
+        align-items: center;
+        & button {
+          font-size: 2rem;
+        }
+        & span {
+          font-size: 30px;
+          margin: 0 0.5rem;
+        }
+      }
+    }
+  }
+  .break-stripe {
+    justify-content: flex-start;
+    background-image: linear-gradient(
+        to right,
+        orange,
+        20%,
+        rgba(255, 255, 255, 0)
+      ),
+      linear-gradient(to right, cyan, rgba(255, 255, 255, 0));
+    border-radius: 50% 0 0 50%;
+    padding-left: 100px;
+  }
+  .session-stripe {
+    justify-content: end;
+    background-image: linear-gradient(
+        to left,
+        orange,
+        10%,
+        rgba(255, 255, 255, 0)
+      ),
+      linear-gradient(to left, aquamarine, rgba(255, 0, 0, 0));
+    border-radius: 0 50% 50% 0;
+    padding-right: 100px;
+  }
 }
 
 /* Moons Section */
-.break-stripe,
-.session-stripe {
-  margin: auto;
-  width: 100%;
-  max-width: 1200px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-}
-.break-stripe {
-  justify-content: flex-start;
-  background-image: linear-gradient(
-      to right,
-      orange,
-      20%,
-      rgba(255, 255, 255, 0)
-    ),
-    linear-gradient(to right, cyan, rgba(255, 255, 255, 0));
-  border-top-left-radius: 50%;
-  border-bottom-left-radius: 50%;
-  padding-left: 100px;
-}
-.session-stripe {
-  background-image: linear-gradient(
-      to left,
-      orange,
-      10%,
-      rgba(255, 255, 255, 0)
-    ),
-    linear-gradient(to left, aquamarine, rgba(255, 0, 0, 0));
-  border-top-right-radius: 50%;
-  border-bottom-right-radius: 50%;
-  padding-right: 100px;
-  justify-content: end;
-}
-.orb {
-  background-color: orangered;
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  box-shadow: inset -25px -25px 40px rgba(0, 0, 0, 0.5),
-    3px 3px 10px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  .time-controls {
-    display: flex;
-    align-items: center;
-    & button {
-      font-size: 2rem;
-    }
-    & span {
-      font-size: 30px;
-      margin: 0 0.5rem;
-    }
-  }
-}
+
 #stars-box {
   position: absolute;
 }
@@ -190,13 +196,15 @@ button {
   left: -330px;
   &:before {
     color: transparent;
-    text-shadow: 2px 3px 10px rgb(55, 125, 230);
+    /* text-shadow: 2px 3px 10px var(--color-blue); */
+    /* text-shadow: 2px 3px 10px color-mix(in srgb, rgb(3, 137, 130) 90%, white); */
+    animation: 1s infinite alternate twinkle;
   }
   &:after {
     background: linear-gradient(
       135deg,
-      rgb(183, 250, 255) 20%,
-      rgb(3, 137, 130) 70%
+      color-mix(in srgb, var(--color-blue) 10%, white) 20%,
+      var(--color-blue) 70%
     );
     background-clip: text;
     -webkit-background-clip: text;
@@ -213,6 +221,7 @@ button {
     text-shadow: 2px 3px 10px rgb(155, 126, 42);
   }
   &:after {
+    animation: twinkle;
     background: linear-gradient(
       135deg,
       rgb(249, 228, 144) 20%,
@@ -225,11 +234,17 @@ button {
 }
 @keyframes leftRight {
   from {
-    color: red;
     margin-left: 10px;
   }
   to {
-    margin-left: 50px;
-    color: green;
+    margin-left: 90px;
+  }
+}
+@keyframes twinkle {
+  from {
+    text-shadow: 2px 3px 5px var(--color-blue);
+  }
+  to {
+    text-shadow: 2px 3px 20px var(--color-blue);
   }
 }
