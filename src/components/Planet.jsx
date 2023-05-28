@@ -11,7 +11,7 @@ const Planet = ({
   breakAudio,
 }) => {
   return (
-    <div id='planet'>
+    <div id='planet' className='ball'>
       <h1>{onBreak ? 'Break' : 'Session'}</h1>
       <div id='button-box'>
         <button id='start_stop' onClick={timerControl}>
