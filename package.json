@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
+    "build:css": "postcss src/style.css -o build/styles/index.css",
     "dev": "webpack serve --mode=development --open"
   },
   "author": "Ian Flynn",
@@ -21,6 +22,10 @@
     "css-loader": "^6.7.4",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.1",
+    "postcss": "^8.4.27",
+    "postcss-cli": "^10.1.0",
+    "postcss-loader": "^7.3.3",
+    "postcss-preset-env": "^9.1.0",
     "style-loader": "^3.3.3",
     "webpack": "^5.83.1",
     "webpack-cli": "^5.1.1",
