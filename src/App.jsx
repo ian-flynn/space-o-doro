@@ -52,7 +52,7 @@ const App = () => {
     if (timerOn) {
       return;
     }
-    if (type == 'break') {
+    if (type == 'Break') {
       //keep timers at 1 minute or higher
       if (breakTime <= 60 && amount < 0) {
         return;
@@ -62,7 +62,7 @@ const App = () => {
       }
       setBreakTime((prev) => prev + amount);
     }
-    if (type == 'session') {
+    if (type == 'Session') {
       //keep timers at 1 minute or higher
       if (sessionTime <= 60 && amount < 0) {
         return;
@@ -103,7 +103,7 @@ const App = () => {
   };
 
   return (
-    <div className='contents'>
+    <div className='wrapper'>
       <Planet
         onBreak={onBreak}
         timerControl={timerControl}
@@ -114,14 +114,24 @@ const App = () => {
         breakAudio={breakAudio}
       />
       <div id='comets-box'>
-        <Comet type={'break'} time={breakTime} changeTime={changeTime} />
-        <Comet type={'session'} time={sessionTime} changeTime={changeTime} />
+        <Comet
+          type={'Break'}
+          time={breakTime}
+          changeTime={changeTime}
+          direction={'left'}
+        />
+        <Comet
+          type={'Session'}
+          time={sessionTime}
+          changeTime={changeTime}
+          direction={'right'}
+        />
       </div>
       <div id='stars-box'>
-        <Star star={'star0'} />
-        <Star star={'star1'} />
-        <Star star={'star2'} />
-        <Star star={'star3'} />
+        <Star star={'pink-star'} top={-300} left={200} delay={250} />
+        <Star star={'green-star'} top={140} left={130} delay={-450} />
+        <Star star={'blue-star'} top={-20} left={-330} delay={650} />
+        <Star star={'yellow-star'} top={-260} left={-230} delay={-850} />
       </div>
     </div>
   );
