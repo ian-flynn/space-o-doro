@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Comet = ({ type, time, changeTime }) => {
+const Comet = ({ type, time, changeTime, direction }) => {
   return (
-    <div className={type + '-stripe'}>
-      <div className={'orb ball'}>
-        <h3>{type[0].toUpperCase() + type.slice(1)}</h3>
-        <div className='time-controls'>
+    <div className={direction === 'left' ? 'comet' : 'comet flip'}>
+      <div className={'ball'}>
+        <h3>{type}</h3>
+        <div className='controls'>
           <button onClick={() => changeTime(-60, type)}>-</button>
           <span>{time / 60}</span>
           <button onClick={() => changeTime(60, type)}>+</button>
