@@ -8,48 +8,66 @@
   --color-red: rgba(243, 44, 117, 1);
   --color-green: rgb(14, 180, 70);
 
-  /* comets */
-  --color-comet: orangered;
-
   /* shadows */
   --shadow-ball: inset -25px -25px 40px rgba(0, 0, 0, 0.5),
     0 3px 10px rgb(0 0 0 / 0.2);
 }
-* {
-  margin: 0;
-  font-family: 'Orbitron', sans-serif;
+html {
   box-sizing: border-box;
 }
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background: radial-gradient(
     var(--background-color),
     color-mix(in srgb, var(--background-color) 50%, rgb(15, 15, 205))
   );
   background-repeat: no-repeat;
-  padding: 0 1rem;
+  /* padding: 0 1rem; */
+  font-family: 'Orbitron', sans-serif;
+}
+h1 {
+  font-size: 2.488rem;
+}
+h2 {
+  font-size: 2.074rem;
+}
+h3 {
+  font-size: 1.728rem;
+}
+h4 {
+  font-size: 1.44rem;
+}
+h5 {
+  font-size: 1.2rem;
 }
 
 /* Button Styles */
 button {
   background: none;
   border: none;
-  padding: 0;
-  color: inherit;
   font-size: large;
   cursor: pointer;
-  outline: inherit;
 }
-.contents {
+.wrapper {
   width: 100vw;
+  max-width: 950px;
   height: 100vh;
-  max-width: 1200px;
-  min-width: 900px;
+  /* background-color: orange; */
   margin: auto;
   padding: 1rem;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .ball {
   border-radius: 50%;
@@ -61,56 +79,40 @@ button {
 #planet {
   width: 400px;
   height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
   z-index: 99;
   padding: 70px 0px 60px;
-  & h1 {
+  h1 {
     font-size: 3rem;
   }
   #button-box {
     width: 50%;
     display: flex;
+
     justify-content: space-between;
   }
-  & p {
+  p {
     font-size: 4rem;
   }
 }
 #comets-box {
   position: absolute;
+  /* background-color: pink; */
   width: 100%;
   height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
-  .break-stripe,
-  .session-stripe {
-    margin: auto;
+  .comet {
+    margin: auto 0;
     width: 100%;
-    max-width: 1200px;
     height: 100px;
     display: flex;
     align-items: center;
-    .orb {
-      background-color: var(--color-comet);
-      width: 160px;
-      height: 160px;
-      justify-content: center;
-      .time-controls {
-        display: flex;
-        align-items: center;
-        & button {
-          font-size: 2rem;
-        }
-        & span {
-          font-size: 30px;
-          margin: 0 0.5rem;
-        }
-      }
-    }
-  }
-  .break-stripe {
     justify-content: flex-start;
     background-image: linear-gradient(
         to right,
@@ -121,18 +123,29 @@ button {
       linear-gradient(to right, cyan, rgba(255, 255, 255, 0));
     border-radius: 50% 0 0 50%;
     padding-left: 100px;
+    .ball {
+      background-color: rgb(227, 119, 80);
+      width: 160px;
+      height: 160px;
+      justify-content: center;
+      .controls {
+        display: flex;
+        align-items: center;
+        button {
+          font-size: 2rem;
+        }
+        span {
+          font-size: 30px;
+          margin: 0 0.5rem;
+        }
+      }
+    }
   }
-  .session-stripe {
-    justify-content: end;
-    background-image: linear-gradient(
-        to left,
-        orange,
-        10%,
-        rgba(255, 255, 255, 0)
-      ),
-      linear-gradient(to left, aquamarine, rgba(255, 0, 0, 0));
-    border-radius: 0 50% 50% 0;
-    padding-right: 100px;
+  .flip {
+    transform: rotate(180deg);
+    .ball {
+      transform: rotate(180deg);
+    }
   }
 }
 
@@ -141,9 +154,16 @@ button {
 #stars-box {
   position: absolute;
 }
+#stars-box * {
+  &::before {
+    /* glow on star */
+    text-shadow: 2px 3px 10px;
+  }
+}
 .four-point-star {
   &:after,
   &:before {
+    /* star shape */
     position: absolute;
     content: '\2726';
     font-size: 6rem;
@@ -151,49 +171,41 @@ button {
   position: relative;
   animation: 3s infinite alternate leftRight;
 }
-#star0 {
+#pink-star {
   animation-delay: 250ms;
   left: 200px;
   top: -300px;
-  &:before {
-    color: transparent;
-    text-shadow: 2px 3px 10px rgb(212, 43, 141);
-  }
-  &:after {
+  color: rgb(255, 55, 171);
+
+  &::after {
     background: linear-gradient(
       135deg,
-      rgba(255, 191, 183, 1) 20%,
-      rgba(243, 44, 117, 1) 70%
+      color-mix(in srgb, currentColor 100%, #ffffff 0%) 40%,
+      color-mix(in srgb, currentColor 60%, #242424 40%) 80%
     );
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
   }
 }
-#star1 {
+
+#green-star {
   animation-delay: -450ms;
   left: 130px;
   top: 140px;
-  &:before {
-    color: transparent;
-    text-shadow: 2px 3px 10px rgb(41, 187, 31);
-  }
+  color: rgb(97, 224, 88);
   &:after {
     background: linear-gradient(
       135deg,
-      rgb(217, 243, 188) 20%,
-      rgb(14, 180, 70) 70%
+      color-mix(in srgb, currentColor 100%, #ffffff 0%) 40%,
+      color-mix(in srgb, currentColor 60%, #242424 40%) 80%
     );
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
   }
 }
-#star2 {
+
+#blue-star {
   animation-delay: 650ms;
   position: relative;
   top: -20px;
   left: -330px;
+  color: rgb(66, 237, 197);
   &:before {
     color: transparent;
     /* text-shadow: 2px 3px 10px var(--color-blue); */
@@ -203,35 +215,35 @@ button {
   &:after {
     background: linear-gradient(
       135deg,
-      color-mix(in srgb, var(--color-blue) 10%, white) 20%,
-      var(--color-blue) 70%
+      color-mix(in srgb, currentColor 100%, #ffffff 0%) 40%,
+      color-mix(in srgb, currentColor 60%, #242424 40%) 80%
     );
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
   }
 }
-#star3 {
+#yellow-star {
   animation-delay: -850ms;
   position: relative;
   top: -260px;
   left: -230px;
-  &:before {
-    color: transparent;
-    text-shadow: 2px 3px 10px rgb(155, 126, 42);
-  }
+  color: #ffdf60;
   &:after {
-    animation: twinkle;
     background: linear-gradient(
       135deg,
-      rgb(249, 228, 144) 20%,
-      rgb(177, 142, 4) 70%
+      color-mix(in srgb, currentColor 100%, #ffffff 0%) 40%,
+      color-mix(in srgb, currentColor 60%, #242424 40%) 80%
     );
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
   }
 }
+
+#pink-star::after,
+#green-star::after,
+#blue-star::after,
+#yellow-star::after {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 @keyframes leftRight {
   from {
     margin-left: 10px;
